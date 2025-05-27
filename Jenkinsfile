@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker') {
             steps {
-                sh 'docker build -t pravalikaa18/sharedlib:0.1.0 .'
+                sh 'docker build -t pravalikaa18/sharedlib1:0.1.0 .'
             }
         }
         stage('Push Docker') {
