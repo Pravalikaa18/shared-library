@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Push Docker') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'Kubeconfig', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh 'echo $PASS | docker login -u $USER --password-stdin'
                     sh 'docker push pravalikaa18/sharedlib:0.1.0'
                 }
